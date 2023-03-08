@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  london_houses:
+    build: .
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysqldb
+  mysqldb:
+    image: mysql:5.7
+    container_name: mysqldb
+    restart: always
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./data-london.sql:/docker-entrypoint-initdb.d/data-london.sql
+    environment:
+      MYSQL_DATABASE: data
+      MYSQL_ROOT_USERNAME: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+volumes:
+  mysql-data:
