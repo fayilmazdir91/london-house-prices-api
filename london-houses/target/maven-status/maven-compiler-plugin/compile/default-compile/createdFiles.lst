@@ -1,0 +1,5 @@
+com\firat\londonhouses\londonhouses\services\HouseService.class
+com\firat\londonhouses\londonhouses\LondonHousesApplication.class
+com\firat\londonhouses\londonhouses\controllers\HouseController.class
+com\firat\londonhouses\londonhouses\entities\House.class
+com\firat\londonhouses\londonhouses\repos\HouseRepository.class
